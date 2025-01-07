@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Grammar and Active/Passive Voice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #444;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-weight: 500;
+      margin-top: 30px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #007bff;
+      padding: 10px 20px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .navbar a {
+      color: #fff;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: #007bff;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Cards for Lessons and Exercises */
+    .card {
+      background-color: #fff;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #007bff;
+    }
+    .card h3 i {
+      margin-right: 10px;
+      color: #007bff;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    table th {
+      background-color: #f5f5f5;
+      font-weight: 500;
+    }
+
+    /* Icons */
+    .icon {
+      font-size: 1.2rem;
+      margin-right: 10px;
+      color: #007bff;
+    }
+
+    /* Interactive Tools */
+    .tool {
+      background-color: #fff;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .tool input, .tool textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .tool button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .tool button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Drag-and-Drop Activity */
+    .drag-drop {
+      background-color: #fff;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .drag-drop .dropzone {
+      border: 2px dashed #007bff;
+      padding: 20px;
+      text-align: center;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+    .drag-drop .draggable {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      margin: 5px;
+      display: inline-block;
+      cursor: grab;
+      border-radius: 4px;
+    }
+
+    /* Fill-in-the-Blanks */
+    .fill-blanks {
+      background-color: #fff;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .fill-blanks input {
+      padding: 5px;
+      margin: 0 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    /* Matching Activity */
+    .matching {
+      background-color: #fff;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .matching .match-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+    .matching .match-item select {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    /* Progress Tracker */
+    .progress-tracker {
+      background-color: #fff;
+      padding: 25px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .progress-tracker .progress-bar {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-tracker .progress {
+      width: 0;
+      height: 20px;
+      background-color: #007bff;
+      transition: width 0.5s ease;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div>
+      <a href="#home">Home</a>
+      <a href="#verbs">Verbs</a>
+      <a href="#grammar">Grammar</a>
+      <a href="#practice">Practice</a>
+      <a href="#quiz">Quiz</a>
+    </div>
+    <div>
+      <a href="#profile">Profile</a>
+      <a href="#settings">Settings</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Master Grammar and Active/Passive Voice</h1>
+    <p>Learn, practice, and excel with interactive tools and quizzes!</p>
+  </div>
+
+  <!-- Introduction -->
+  <div class="container">
+    <section id="home">
+      <h2>What is Active and Passive Voice?</h2>
+      <p>In <strong>active voice</strong>, the subject performs the action. In <strong>passive voice</strong>, the subject receives the action.</p>
+      <div class="card">
+        <p><strong>Example:</strong></p>
+        <p><strong>Active:</strong> The cat chased the mouse.</p>
+        <p><strong>Passive:</strong> The mouse was chased by the cat.</p>
+      </div>
+    </section>
+
+    <!-- Comprehensive Guide to Verbs and Grammar -->
+    <section id="verbs">
+      <h2>Comprehensive Guide to Verbs and Grammar</h2>
+
+      <!-- Verbs Section -->
+      <div class="card">
+        <h3><i class="fas fa-running icon"></i>Understanding Verbs</h3>
+        <p>A <strong>verb</strong> is a word that describes an action, state, or occurrence. Verbs are essential for constructing sentences and conveying meaning.</p>
+        <h4>Types of Verbs:</h4>
+        <ul>
+          <li><strong>Action Verbs:</strong> Describe physical or mental actions (e.g., "run," "think").</li>
+          <li><strong>Linking Verbs:</strong> Connect the subject to a subject complement (e.g., "be," "seem").</li>
+          <li><strong>Auxiliary Verbs:</strong> Help form tenses, moods, or voices (e.g., "be," "have," "do").</li>
+          <li><strong>Modal Verbs:</strong> Express necessity, possibility, or ability (e.g., "can," "must").</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-clock icon"></i>Verb Tenses</h3>
+        <p>Verbs change form to indicate <strong>tense</strong>, which shows the time of the action (past, present, or future).</p>
+        <table>
+          <tr>
+            <th>Tense</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>Present Simple</td>
+            <td>She writes a letter.</td>
+          </tr>
+          <tr>
+            <td>Past Simple</td>
+            <td>She wrote a letter.</td>
+          </tr>
+          <tr>
+            <td>Future Simple</td>
+            <td>She will write a letter.</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Grammar Concepts Section -->
+      <div class="card">
+        <h3><i class="fas fa-book icon"></i>Other Essential Grammar Concepts</h3>
+        <h4>Nouns:</h4>
+        <p>Words that name people, places, things, or ideas (e.g., "dog," "city").</p>
+        <h4>Pronouns:</h4>
+        <p>Words that replace nouns (e.g., "he," "she," "they").</p>
+        <h4>Adjectives:</h4>
+        <p>Words that describe or modify nouns (e.g., "beautiful," "tall").</p>
+        <h4>Adverbs:</h4>
+        <p>Words that modify verbs, adjectives, or other adverbs (e.g., "quickly," "very").</p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-pen icon"></i>Sentence Structure</h3>
+        <p>A sentence typically consists of a <strong>subject</strong>, <strong>verb</strong>, and <strong>object</strong>.</p>
+        <h4>Types of Sentences:</h4>
+        <ul>
+          <li><strong>Declarative:</strong> Makes a statement (e.g., "She is reading a book.")</li>
+          <li><strong>Interrogative:</strong> Asks a question (e.g., "Are you coming?")</li>
+          <li><strong>Imperative:</strong> Gives a command (e.g., "Close the door.")</li>
+          <li><strong>Exclamatory:</strong> Expresses strong emotion (e.g., "What a beautiful day!")</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-lightbulb icon"></i>Advanced Grammar Concepts</h3>
+        <h4>Conditionals:</h4>
+        <p>Used to express hypothetical situations (e.g., "If I were rich, I would travel the world.")</p>
+        <h4>Relative Clauses:</h4>
+        <p>Provide additional information about a noun (e.g., "The book that I borrowed is interesting.")</p>
+        <h4>Direct and Indirect Speech:</h4>
+        <p>Direct speech quotes exact words, while indirect speech reports what someone said.</p>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-check-circle icon"></i>Practice Exercises</h3>
+        <p>Test your knowledge with these exercises:</p>
+        <ol>
+          <li>Identify the verb type: "She sings beautifully."</li>
+          <li>Convert to indirect speech: "I will call you tomorrow," she said.</li>
+          <li>Fill in the blank: "She ___ (go) to the market every day."</li>
+        </ol>
+        <h4>Answers:</h4>
+        <ol>
+          <li>"sings" (action verb)</li>
+          <li>She said that she would call me the next day.</li>
+          <li>She <strong>goes</strong> to the market every day.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Interactive Tools -->
+    <section id="practice">
+      <h2>Interactive Tools</h2>
+      <div class="card">
+        <h3><i class="fas fa-puzzle-piece icon"></i>Fill-in-the-Blanks</h3>
+        <p>Complete the sentence in passive voice:</p>
+        <p>The cake <input type="text" id="blank1"> (bake) by the chef.</p>
+        <button onclick="checkFillBlanks()">Check Answer</button>
+        <p id="fillResult"></p>
+      </div>
+
+      <!-- Drag-and-Drop Activity -->
+      <div class="drag-drop">
+        <h3>Drag-and-Drop Activity</h3>
+        <p>Rearrange the words to form a correct passive sentence:</p>
+        <div class="dropzone" id="dropzone">
+          <div class="draggable" draggable="true">The book</div>
+          <div class="draggable" draggable="true">was written</div>
+          <div class="draggable" draggable="true">by the author.</div>
+        </div>
+      </div>
+
+      <!-- Matching Activity -->
+      <div class="matching">
+        <h3>Matching Activity</h3>
+        <p>Match the active sentences with their passive equivalents:</p>
+        <div class="match-item">
+          <span>1. The teacher explained the lesson.</span>
+          <select id="match1">
+            <option value="">Select</option>
+            <option value="1">The lesson was explained by the teacher.</option>
+            <option value="2">The lesson is explained by the teacher.</option>
+          </select>
+        </div>
+        <div class="match-item">
+          <span>2. They are building a house.</span>
+          <select id="match2">
+            <option value="">Select</option>
+            <option value="1">A house is being built by them.</option>
+            <option value="2">A house was built by them.</option>
+          </select>
+        </div>
+        <button onclick="checkMatching()">Check Answers</button>
+        <p id="matchingResult"></p>
+      </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+      <h2>Test Your Knowledge</h2>
+      <div class="card">
+        <h3><i class="fas fa-question-circle icon"></i>Quiz</h3>
+        <p>Convert the following sentence to passive voice:</p>
+        <p><strong>Active:</strong> The teacher explained the lesson.</p>
+        <form id="quizForm">
+          <label>
+            <input type="radio" name="answer" value="1"> The lesson was explained by the teacher.
+          </label>
+          <label>
+            <input type="radio" name="answer" value="2"> The lesson is explained by the teacher.
+          </label>
+          <label>
+            <input type="radio" name="answer" value="3"> The lesson explained the teacher.
+          </label>
+          <button type="button" onclick="checkAnswer()">Submit</button>
+        </form>
+        <div class="result" id="quizResult"></div>
+      </div>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section id="progress">
+      <h2>Your Progress</h2>
+      <div class="progress-tracker">
+        <p>You have completed <strong id="progressPercent">0%</strong> of the course.</p>
+        <div class="progress-bar">
+          <div class="progress" id="progressBar"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Made with ❤️robiii</p>
+  </div>
+
+  <script>
+    // Quiz Checker
+    function checkAnswer() {
+      const answers = document.getElementsByName('answer');
+      let selectedAnswer;
+      for (const answer of answers) {
+        if (answer.checked) {
+          selectedAnswer = answer.value;
+          break;
+        }
+      }
+      const result = document.getElementById('quizResult');
+      if (selectedAnswer === '1') {
+        result.textContent = 'Correct! Well done.';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'Incorrect. Try again!';
+        result.style.color = 'red';
+      }
+    }
+
+    // Fill-in-the-Blanks Checker
+    function checkFillBlanks() {
+      const blank1 = document.getElementById('blank1').value.toLowerCase();
+      const result = document.getElementById('fillResult');
+      if (blank1 === 'was baked') {
+        result.textContent = 'Correct! Well done.';
+        result.style.color = 'green';
+      } else {
+        result.textContent = 'Incorrect. Try again!';
+        result.style.color = 'red';
+      }
+    }
+
+    // Matching Activity Checker
+    function checkMatching() {
+      const match1 = document.getElementById('match1').value;
+      const match2 = document.getElementById('match2').value;
+      const result = document.getElementById('matchingResult');
+      let correct = 0;
+
+      if (match1 === '1') correct++;
+      if (match2 === '1') correct++;
+
+      result.textContent = `You got ${correct} out of 2 correct!`;
+      result.style.color = correct === 2 ? 'green' : 'red';
+    }
+
+    // Drag-and-Drop Functionality
+    const dropzone = document.getElementById('dropzone');
+    let draggedItem = null;
+
+    document.querySelectorAll('.draggable').forEach(item => {
+      item.addEventListener('dragstart', () => {
+        draggedItem = item;
+        setTimeout(() => item.style.display = 'none', 0);
+      });
+
+      item.addEventListener('dragend', () => {
+        setTimeout(() => item.style.display = 'inline-block', 0);
+        draggedItem = null;
+      });
+    });
+
+    dropzone.addEventListener('dragover', e => {
+      e.preventDefault();
+    });
+
+    dropzone.addEventListener('drop', e => {
+      e.preventDefault();
+      dropzone.appendChild(draggedItem);
+    });
+
+    // Progress Tracker
+    let progress = 0;
+    const progressBar = document.getElementById('progressBar');
+    const progressPercent = document.getElementById('progressPercent');
+
+    function updateProgress() {
+      progress += 10;
+      if (progress > 100) progress = 100;
+      progressBar.style.width = progress + '%';
+      progressPercent.textContent = progress + '%';
+    }
+    
+    setInterval(updateProgress, 2000);
+  </script>
+</body>
+</html>
